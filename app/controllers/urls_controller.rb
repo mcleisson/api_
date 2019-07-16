@@ -9,6 +9,7 @@ class UrlsController < ApplicationController
 
   # GET /urls/1
   def show
+    @urls = Url.
     render json: @url
   end
 
@@ -34,13 +35,9 @@ class UrlsController < ApplicationController
 
   # DELETE /urls/1
   def destroy
-    #@url = Url.destroy
-
     @urls = Url.find(params[:id])
-				@urls.destroy
-				render json: {},status: :ok #status: 'SUCCESS', message:'Deleted article', data:@urls
-			
-    #render json: @url
+    @urls.destroy
+    render json: {},status: :ok 
   end
 
   private
