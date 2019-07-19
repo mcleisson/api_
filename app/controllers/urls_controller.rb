@@ -48,6 +48,6 @@ class UrlsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def url_params
-      params.permit(:id,:hits, :url, :shorturl) #require(:url)
+      params.permit(:id,:hits, :url, :shorturl, :user_id) #require(:url)
     end
 end
