@@ -24,6 +24,14 @@ Rails versão 5.2.3
 
 7 - Execute o comando rake db:seed para inserir os dados iniciais no sistema;
 
+8 - Execute o comando rails s, para que o servidor seja startado. Após isto abra o seu navegador de internet preferido e acesse 
+    http://localhost:3000 ou se está executando em uma VM com acesso somente via linha de comando, abra seu navegador de sua maquina local e insira o endereço de acesso http://ip_do_servidor_ou_url:3000, exemplo http://192.168.100.200:3000 ou http://www.meusite.com.br:3000, e irá aparecer uma tela que o servidor está rodando;
+
+*Testendo a aplicação
+
+1 - O teste deve ser feito via Postman (https://www.getpostman.com/downloads/), instale em seu computador;
+
+
 
 
 
