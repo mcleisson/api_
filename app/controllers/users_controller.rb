@@ -13,6 +13,13 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def urls
+    #@urls = Url.find(params[:user_id])
+    #@users = 
+    @urls = Url.joins(:user).where(urls: {:user_id => @user})
+    render json: @urls
+  end
+
   # POST /users
   def create
     @user = User.new(user_params)
@@ -40,6 +47,12 @@ class UsersController < ApplicationController
     render json: {},status: :ok
   end
 
+  def stats
+    @url = Url.joins(:users).where(urls: {:user_id => @users})
+      render json: {},status: :ok
+  #@exam = Exam.joins(:patient).where(exams: {:patient_id => @patient})
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -48,6 +61,8 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:id, :name)
     end
+    
+
 end
